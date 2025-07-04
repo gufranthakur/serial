@@ -1,0 +1,54 @@
+{
+  "name": "uart-dashboard",
+  "version": "1.0.0",
+  "description": "UART Data Dashboard with Real-time Graphing",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron .",
+    "build": "electron-builder",
+    "dist": "electron-builder --publish=never"
+  },
+  "keywords": [
+    "electron",
+    "uart",
+    "serial",
+    "dashboard",
+    "data-visualization"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^22.0.0",
+    "electron-builder": "^23.6.0",
+    "electron-rebuild": "^3.2.9"
+  },
+  "build": {
+    "appId": "com.yourcompany.uart-dashboard",
+    "productName": "UART Dashboard",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "index.html",
+      "package.json"
+    ],
+    "win": {
+      "target": "nsis",
+      "icon": "assets/icon.ico"
+    },
+    "mac": {
+      "target": "dmg",
+      "icon": "assets/icon.icns"
+    },
+    "linux": {
+      "target": "AppImage",
+      "icon": "assets/icon.png"
+    }
+  },
+  "dependencies": {
+    "serialport": "^10.5.0"
+  }
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Modbus TCP Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div id="welcome-screen">
+  <h1>MODBUS TCP/IP</h1>
+</div>
+
+  <div class="container">
+    <h1>Modbus TCP IP</h1>
+
+    <!-- Connection Panel -->
+    <div class="connection-panel">
+      <input type="text" id="host" placeholder="IP Address">
+      <input type="number" id="port" placeholder="Port" value="502">
+      <input type="number" id="unitId" placeholder="Unit ID" value="1">
+      <button id="connect">Connect</button>
+      <button id="disconnect" disabled>Disconnect</button>
+      <span id="status">Disconnected</span>
+    </div>
+
+    <!-- Mode Toggle -->
+    <div class="mode-toggle">
+      <label><input type="radio" name="mode" value="single" checked> Range Mode</label>
+      <label><input type="radio" name="mode" value="multiple"> List Mode</label>
+    </div>
+
+    <!-- Register Inputs -->
+    <div class="register-inputs">
+      <div id="range-inputs" style="display: flex; gap: 10px;">
+        <input type="number" id="address" placeholder="Start Address">
+        <input type="number" id="count" placeholder="Count">
+      </div>
+      <div id="multiple-inputs" style="display: none; width: 100%;">
+        <input type="text" id="registerList" placeholder="Comma-separated Register Addresses" style="width: 100%;">
+      </div>
+    </div>
+
+    <!-- Controls -->
+    <div class="controls">
+      <button id="fetch">Fetch</button>
+      <button id="toggle-polling">Start Polling</button>
+      <button id="export">Export CSV</button>
+      <button id="toggle-theme">Toggle Theme</button>
+    </div>
+
+    <!-- Live Register Values -->
+    <div class="live-values" id="liveValues"></div>
+
+    <!-- Chart -->
+    <canvas id="chart"></canvas>
+  </div>
+
+  <script src="dashboard.js"></script>
+</body>
+</html>

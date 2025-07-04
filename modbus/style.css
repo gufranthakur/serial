@@ -1,0 +1,173 @@
+/* style.css */
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8f9fa;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  transition: background 0.3s, color 0.3s;
+}
+
+#welcome-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #f8f9fa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  animation: fadeOutWelcome 1.2s ease forwards;
+  animation-delay: 2s;
+  opacity: 1;
+}
+
+#welcome-screen h1 {
+  font-size: 48px;
+  font-weight: 800;
+  color: #007bff;
+  opacity: 0;
+  animation: fadeInTitle 1s ease forwards 0.3s;
+}
+
+@keyframes fadeInTitle {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes fadeOutWelcome {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+
+.container {
+  width: 95vw;
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 30px;
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+}
+
+canvas {
+  width: 100% !important;
+  height: 420px !important;
+  display: block;
+  background: #fff;
+  padding: 10px;
+  margin-top: 20px;
+  box-sizing: border-box;
+}
+
+
+
+
+@keyframes fadeInSettings {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 36px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #007bff;
+}
+
+.connection-panel,
+.mode-toggle,
+.register-inputs,
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-bottom: 20px;
+  justify-content: center;
+}
+
+input[type="text"],
+input[type="number"] {
+  padding: 10px 14px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background: #fff;
+  color: #000;
+}
+
+input::placeholder {
+  color: #888;
+}
+
+button {
+  padding: 10px 18px;
+  font-size: 14px;
+  border: none;
+  border-radius: 8px;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+button:disabled {
+  background-color: #aaa;
+  cursor: not-allowed;
+}
+
+button.active {
+  background-color: #28a745;
+}
+
+#status {
+  align-self: center;
+  font-weight: bold;
+  color: #dc3545;
+}
+
+
+
+
+
+.live-values {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.live-values .register-card {
+  background: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 12px 16px;
+  min-width: 100px;
+  text-align: center;
+  font-weight: bold;
+  color: #000;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
